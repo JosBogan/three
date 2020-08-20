@@ -8,8 +8,14 @@ function init() {
 
   function initialiser() {
 
+    const AspectRatio = window.innerWidth / window.innerHeight
+    const viewsize = 10
+
     scene = new THREE.Scene()
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+    // camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+
+    camera = new THREE.OrthographicCamera( viewsize * AspectRatio / - 2, viewsize * AspectRatio / 2, viewsize / 2, viewsize / - 2, -1000, 1000)
+
 
     // console.log(THREE)
   
